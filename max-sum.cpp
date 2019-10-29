@@ -5,13 +5,13 @@ main()
 {
 int arr[]={-1,2,4,-3,5,2,-5,2};
 int n=*(&arr+1)-arr;
-cout<<"size is "<<n<<endl;
 int best=0;
-int sum=0;
-for(int i=0;i<n;i++)
-{
-sum=max(arr[i],sum+arr[i]);
-best=max(best,sum);
+for (int a = 0; a < n; a++) {
+int sum = 0;
+for (int b = a; b < n; b++) {
+sum += arr[b];
+best = max(best,sum);
+}
 }
 cout<<"The maximum sum of the elements is "<<best;
 return 0;
