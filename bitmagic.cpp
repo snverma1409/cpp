@@ -1,15 +1,12 @@
 #include <bits/stdc++.h> 
 using namespace std; 
+int min(int x, int y) 
+{ 
+    return y + ((x - y) & ((x - y) >> (sizeof(int) * CHAR_BIT - 1))); 
+} 
 int smallest(int x, int y, int z) 
 { 
-    int c = 0; 
-    while (x && y && z) { 
-        x--; 
-        y--; 
-        z--; 
-        c++; 
-    } 
-    return c; 
+   return min(x, min(y, z));
 } 
 int main() 
 { 
